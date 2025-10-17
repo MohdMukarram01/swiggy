@@ -1,0 +1,20 @@
+@import "@flaticon/flaticon-uicons/css/all/all";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.filterbtn{
+    border: 1px solid rgb(205, 195, 195);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 15px;
+    box-shadow: 1px 1px rgb(216, 216, 216);
+}
+.active{
+    background-color: rgb(188, 187, 187);
+    border: 1px solid;
+}
+.active i{
+    display: block;
+}
