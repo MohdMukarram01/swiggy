@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Cartcontext } from '../context/context'
+import { Cartcontext } from '../Context/Context'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearcart, deleteItem } from '../Utility/cartslice';

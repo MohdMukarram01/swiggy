@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from "react"
 import { Route, Routes } from "react-router-dom"
-import { Coordinates } from "./context/context.js"
+import { Coordinates } from "./Context/Context.js"
 import { useSelector } from "react-redux"
 
 // ✅ Lazy loaded components

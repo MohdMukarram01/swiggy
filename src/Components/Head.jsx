@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useContext} from "react";
 import {Link,Outlet } from "react-router-dom";
-import { Cartcontext, Coordinates } from "../context/context";
+import { Cartcontext, Coordinates } from "../Context/Context";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleSearchBar,toggleLogin } from "../Utility/toogleSlice";
 import Signin from "./Signin";

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Cartcontext, Coordinates } from "../context/context";
+import { Cartcontext, Coordinates } from "../Context/Context";
 import { useDispatch, useSelector } from "react-redux";
 import { addtocart, clearcart } from "../Utility/cartslice";
 import toast from "react-hot-toast";
