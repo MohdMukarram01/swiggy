@@ -22,25 +22,25 @@ function Search() {
     }
 
       async function fetchDishes() {
-        let data = await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=19.046109348109795&lng=72.84988481551409&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=bd8776ed-792b-992d-1489-26eeb1431bdf&selectedPLTab=DISH`);
+        let data = await fetch(`${import.meta.env.VITE_BASE_URL}/restaurants/search/v3?lat=19.046109348109795&lng=72.84988481551409&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=bd8776ed-792b-992d-1489-26eeb1431bdf&selectedPLTab=DISH`);
         let res = await data.json();
         const finalData = (res?.data?.cards[0]?.groupedCard?.cardGroupMap?.DISH?.cards).filter(
             (data) => data?.card?.card?.info
         );
         setdishes(finalData);
-        console.log(finalData)
+        // console.log(finalData)
     }
 
 
 
       async function fetchResaturantData() {
-        let data = await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=26.5488639&lng=80.2258513&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=31e999ef-950c-b3ff-1bef-121082104a28&selectedPLTab=RESTAURANT`)
+        let data = await fetch(`${import.meta.env.VITE_BASE_URL}/restaurants/search/v3?lat=26.5488639&lng=80.2258513&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=31e999ef-950c-b3ff-1bef-121082104a28&selectedPLTab=RESTAURANT`)
         let res = await data.json();
         const finalData = (res?.data?.cards[0]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards).filter(
             (data) => data?.card?.card?.info
         );
         setRestaurant(finalData);
-        console.log(finalData)
+        // console.log(finalData)
     }
 
     useEffect(() => {
@@ -67,9 +67,9 @@ function Search() {
             </div>
         <div className="flex flex-wrap justify-start gap-3 my-3">
         {
-          filteroption.map(data=>(
+          filteroption.map((data,idx)=>(
             // <button className={"filterbtn flex gap-1 " + (activebtn===data.filterName ? "active":"")} >
-            <button onClick={()=>handleFilterBtn(data.filterName)}  className={"filterbtn flex gap-1 " + (activeBtn===data.filterName ? "active":"")} >
+            <button key={idx} onClick={()=>handleFilterBtn(data.filterName)}  className={"filterbtn flex gap-1 " + (activeBtn===data.filterName ? "active":"")} >
               <p>{data.filterName}</p>
             </button>
             

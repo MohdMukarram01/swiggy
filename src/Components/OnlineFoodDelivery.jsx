@@ -34,8 +34,8 @@ function OnlineFoodDelivery({ data,title}) {
       <h1 className='font-bold text-[21px]'>{title}</h1>
       <div className="flex flex-wrap justify-start gap-3 my-3">
         {
-          filteroption.map(data=>(
-            <button onClick={()=>handleFilterbtn(data.filterName)} className={"filterbtn flex gap-1 " + (activebtn===data.filterName ? "active":"")} >
+          filteroption.map((data,id)=>(
+            <button key={id} onClick={()=>handleFilterbtn(data.filterName)} className={"filterbtn flex gap-1 " + (activebtn===data.filterName ? "active":"")} >
               <p>{data.filterName}</p>
               <i className={"fi mt-[2px] h-0 fi-sr-cross-small hidden"}></i>
             </button>

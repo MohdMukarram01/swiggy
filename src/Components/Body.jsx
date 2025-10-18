@@ -9,13 +9,13 @@ function Body() {
       const [onyourminddata,setonyourminddata]=useState([]);
       const [toprestaurantdata,settoprestaurantdata]=useState([]);
       const [onlineFoodDeliverydata,setonlineFoodDeliverydata]=useState([]);
-      console.log(onlineFoodDeliverydata)
+      // console.log(onlineFoodDeliverydata)
       // console.log(toprestaurantdata)
       const {coord : {lat,lng}}=useContext(Coordinates);
       const [toprestitle,settoprestitle]=useState("");
       const [onlineTitle,setonlinetitle]=useState("");
       const filterval=useSelector((state=>state.filterslice.filterval))
-      console.log(filterval)
+      // console.log(filterval)
       const filterData=onlineFoodDeliverydata.filter(item=>{
         if(!filterval) return;
 
@@ -39,7 +39,7 @@ function Body() {
 
 
       async function fetchdata() {
-          const data=await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
+          const data=await fetch(`${import.meta.env.VITE_BASE_URL}/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
           const result=await data.json();
           settoprestitle(result?.data?.cards[1]?.card?.card?.header?.title);
           setonlinetitle(result?.data?.cards[2]?.card?.card?.title);

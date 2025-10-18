@@ -8,7 +8,7 @@ import Signin from "./Signin";
 function Head() {
   const visible=useSelector((state)=>state.toogleSlice.searchBarToogle);
   const visible2=useSelector((state)=>state.toogleSlice.loginToggle);
-  console.log(visible2)
+  // console.log(visible2)
   // console.log(data)
   const dispatch=useDispatch()
     // const [visible,setvisible]=useState(false);
@@ -18,7 +18,7 @@ function Head() {
     // const {cartData,setCartData}=useContext(Cartcontext);...
     const cartData=useSelector((state)=>state.cartslice.cartItems)
 
-    console.log(cartData)
+    // console.log(cartData)
     // console.log(searchresult)
 
     // https://www.swiggy.com/dapi/misc/address-recommend?place_id=ChIJN3GxoW7O5zsR4_XLO7GOGf4  find lag and lat
@@ -30,7 +30,7 @@ function Head() {
       return;             // aur function yahin stop
   }
   try {
-    const res = await fetch(`https://www.swiggy.com/dapi/misc/place-autocomplete?input=${val}&types=`);
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/misc/place-autocomplete?input=${val}&types=`);
     const data = await res.json();
     setsearchresult(data.data)
   } catch (error) {
@@ -46,7 +46,7 @@ function Head() {
  async function fetchlatANDlng(id,loc) {
         if (id == "") return;
         setlocation(loc)
-        console.log(id);
+        // console.log(id);
         // handleVisibility();
         handleVisibility()
         const res = await fetch(
@@ -169,7 +169,7 @@ function Head() {
                           searchresult.map((data,index)=>{
                             const idx=(index===searchresult.length-1)
                             return (
-                              <div className="flex gap-3">
+                              <div key={index} className="flex gap-3">
                               <p className="mt-2">
                                 <i className="fi mt-2 fi-rs-marker"></i>
                               </p>
