@@ -3,7 +3,7 @@ import Onyourmind from "./Onyourmind";
 import Toprestaurant from "./Toprestaurant";
 import Restaurent from "./RestaurentCard";
 import OnlineFoodDelivery from "./OnlineFoodDelivery";
-import { Coordinates } from "../Context/Context.js";
+import { Coordinates } from "../ContextData/Context.js";
 import { useDispatch, useSelector } from "react-redux";
 function Body() {
       const [onyourminddata,setonyourminddata]=useState([]);

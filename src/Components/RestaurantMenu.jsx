@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Cartcontext, Coordinates } from "../Context/Context.js";
+import { Cartcontext, Coordinates } from "../ContextData/Context.js";
 import { useDispatch, useSelector } from "react-redux";
 import { addtocart, clearcart } from "../Utility/cartslice";
 import toast from "react-hot-toast";
@@ -38,7 +38,7 @@ function RestaurantMenu() {
                     data?.card?.card?.itemCards || data?.card?.card?.categories
             )
         );
-        
+
       let actualdata=(res?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(data=> data?.card?.card?.itemCards || data?.card?.card?.categories);
       // console.log(actualdata);
       setMenudata(actualdata);
