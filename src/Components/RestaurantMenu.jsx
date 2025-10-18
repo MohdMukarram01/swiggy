@@ -38,10 +38,7 @@ function RestaurantMenu() {
                     data?.card?.card?.itemCards || data?.card?.card?.categories
             )
         );
-
-
-
-
+        
       let actualdata=(res?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(data=> data?.card?.card?.itemCards || data?.card?.card?.categories);
       // console.log(actualdata);
       setMenudata(actualdata);
