@@ -12,7 +12,7 @@ function Cart() {
  const dispatch=useDispatch();
  const cartData=useSelector((state)=>state.cartslice.cartItems)
  const resInfo=useSelector((state)=>state.cartslice.resInfo)
- console.log(resInfo)
+//  console.log(resInfo)
 //  const resInfo = useSelector((state) => state.cartslice.resInfo)
 //  console.log(resInfo)
 
@@ -96,8 +96,8 @@ function Cart() {
             </div>
           </div>
         {
-            cartData.map((data,i)=>(
-                <div className='flex justify-between my-10 '>
+            cartData.map((data,idnx)=>(
+                <div key={idnx} className='flex justify-between my-10 '>
                 <div className='w-[55%] md:w-[70%]'>
                   <h2 className='text-xl'>{data.name}</h2>
                   <p className="font-semibold text-gray-900 text-[16px]">₹{data?.price/100 || data?.defaultPrice/100}</p>
@@ -105,7 +105,7 @@ function Cart() {
                 </div>
                 <div className="w-[40%] md:w-[20%] h-[196px] relative">
                      <img className="rounded-xl aspect-square" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${data.imageId}`} alt="" />
-                     <button onClick={()=>handleremove(i)} className="bg-white absolute bottom-[25px] left-1/2 -translate-x-1/2 border px-8 py-2 drop-shadow rounded-xl font-bold text-green-700 hover:bg-gray-300">Remove</button>
+                     <button onClick={()=>handleremove(idnx)} className="bg-white absolute bottom-[25px] left-1/2 -translate-x-1/2 border px-8 py-2 drop-shadow rounded-xl font-bold text-green-700 hover:bg-gray-300">Remove</button>
                </div>
                 </div>
             ))

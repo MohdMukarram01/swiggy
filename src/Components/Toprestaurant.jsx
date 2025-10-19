@@ -21,7 +21,7 @@ function Toprestaurant({data,title}) {
     function handlenext()
     {
        val >= 100 ?" ": setval((prev)=>prev + 40)
-       console.log(val)
+      //  console.log(val)
     }
     function handleprev()
     {

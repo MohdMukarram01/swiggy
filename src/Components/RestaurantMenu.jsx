@@ -39,8 +39,10 @@ function RestaurantMenu() {
             )
         );
 
-      let actualdata=(res?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(data=> data?.card?.card?.itemCards || data?.card?.card?.categories);
-      // console.log(actualdata);
+      // let actualdata=(res?.data?.cards?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(data=> data?.card?.card?.itemCards || data?.card?.card?.categories) || [];
+      // console.log(res?.data?.cards?.groupedCard?.cardGroupMap?.REGULAR?.cards).filter(data=> data?.card?.card?.itemCards || data?.card?.card?.categories);
+      // const actualdata = res?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((data) =>data?.card?.card?.itemCards || data?.card?.card?.categories) || [];
+      const actualdata = actualMenu?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(  (item) => item?.card?.card?.itemCards || item?.card?.card?.categories) || [];
       setMenudata(actualdata);
     }
 

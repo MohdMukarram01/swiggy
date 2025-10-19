@@ -20,12 +20,12 @@ function Onyourmind({data}) {
     function handlenext()
     {
        val >= 130 ?" ": setval((prev)=>prev + 52)
-       console.log(val)
+      //  console.log(val)
     }
     function handleprev()
     {
      val == 0 ?" " : setval((prev)=>prev - 52)
-      console.log(val)
+      // console.log(val)
     }
   return (
     <div>
