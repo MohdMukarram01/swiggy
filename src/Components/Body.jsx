@@ -9,8 +9,8 @@ function Body() {
       const [onyourminddata,setonyourminddata]=useState([]);
       const [toprestaurantdata,settoprestaurantdata]=useState([]);
       const [onlineFoodDeliverydata,setonlineFoodDeliverydata]=useState([]);
-      // console.log(onlineFoodDeliverydata)
-      // console.log(toprestaurantdata)
+      console.log(onlineFoodDeliverydata)
+      console.log(toprestaurantdata)
       const {coord : {lat,lng}}=useContext(Coordinates);
       const [toprestitle,settoprestitle]=useState("");
       const [onlineTitle,setonlinetitle]=useState("");
@@ -44,10 +44,10 @@ function Body() {
           settoprestitle(result?.data?.cards[1]?.card?.card?.header?.title);
           setonlinetitle(result?.data?.cards[2]?.card?.card?.title);
           setonyourminddata(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-          settoprestaurantdata(result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-          setonlineFoodDeliverydata(result?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-          // console.log(result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      }
+          settoprestaurantdata(result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+          // console.log(result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+          setonlineFoodDeliverydata(result?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)      
+        }
   
       useEffect(()=>{
       if (lat && lng) {

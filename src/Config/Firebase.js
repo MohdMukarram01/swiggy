@@ -3,6 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth"
 // console.log(JSON.parse(import.meta.env.VITE_KEY))
 const firebaseConfig = JSON.parse(import.meta.env.VITE_KEY);
+// console.log(firebaseConfig);
+
+// const firebaseConfig = JSON.parse(import.meta.env.VITE_KEY);
 
 
 
